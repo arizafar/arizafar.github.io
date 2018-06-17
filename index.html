@@ -4,172 +4,56 @@
 <head>
 	<title>ARIZ ZAFAR</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- link to main stylesheet -->
-	<!-- bootstrap 4.0.0-beta.2 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-	<!-- main style -->
 	<link rel="stylesheet" type="text/css" href="css/main.css?v=2017.11.11_v2">
-
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107490980-1"></script>
-
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments)};
-		gtag('js', new Date());
-
-		gtag('config', 'UA-107490980-1');
+		window.dataLayer=window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config', 'UA-107490980-1');
 	</script>
 </head>
 
 <body>
-	<header>
-	</header>
+	<header></header>
 	<div class='site-container'>
-
 		<section class='intro'>
 			<div id='particles-js'></div>
 			<div class='wrap'>
 				<div class='content'>
 					<div class="profile-card">
 						<header>
-							<!-- avatar -->
 							<a>
 								<img src="img/kakarot.jpg" class="unselectable">
 							</a>
-							<!-- name -->
 							<h1 class="unselectable">ARIZ ZAFAR</h1>
-							<!-- role -->
 							<h2 class="unselectable">MEAN Stack Developer</h2>
 						</header>
 						<div class="profile-bio">
-							<p class="unselectable">
-								Passionate about technology
-								<br>Focused And Motivated
-							</p>
+							<p class="unselectable">Passionate about technology
+								<br>Focused And Motivated</p>
 						</div>
-						<!-- social links -->
 						<ul class="profile-social-links">
-							<li>
-								<a target="_blank" href="https://www.linkedin.com/in/ariz-zafar-280937a1/">
-									<i class="fa fa-lg fa-linkedin"></i>
-								</a>
+							<li><a target="_blank" href="https://www.linkedin.com/in/arizafar/"><i class="fa fa-lg fa-linkedin"></i></a>
 							</li>
-							<li>
-								<a target="_blank" href="https://stackoverflow.com/users/9381809/ariz-zafar">
-									<i class="fa fa-lg fa-stack-overflow"></i>
-								</a>
+							<li><a target="_blank" href="https://stackoverflow.com/users/9381809/ariz-zafar"><i class="fa fa-lg fa-stack-overflow"></i></a>
 							</li>
-							<li>
-								<a target="_blank" href="https://github.com/arizafar">
-									<i class="fa fa-lg fa-github-alt"></i>
-								</a>
+							<li><a target="_blank" href="https://github.com/arizafar"><i class="fa fa-lg fa-github-alt"></i></a>
 							</li>
-							<li>
-								<a target="_blank" href="https://arizafar@gmail.com/">
-									<i class="fa fa-lg fa-envelope-open"></i>
-								</a>
+							<li><a target="_blank" href="mailto:arizafar@gmail.com"><i class="fa fa-lg fa-envelope-open"></i></a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- =================== script =================== -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-		<script src="lib/parallax.js-1.4.2/parallax.min.js"></script>
-		<!-- Latest compiled and minified JavaScript -->
-
-		<!-- particles js -->
 		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-		<!-- bootstrap 4.0.0-beta.2 -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-		<!-- main js file -->
 		<script src="js/main.js"></script>
-
 		<script>
-		$(document).ready(function() {
-			styleDefault();
-		});
-
-		var isDragging = false;
-		var sliderTop, pointerPos, currentSection;
-
-		var bodyHeight = $('body').height();
-		var sliderHeight = $('.slider-navigation').height();
-		var elementHeight = $('section').height();
-		var sectionAmount = $('section').length;
-		var scale = (bodyHeight - (elementHeight)) / (sliderHeight - $('.nav-pointer').outerHeight());
-
-
-		var waitForFinalEvent = (function() {
-			var timers = {};
-			return function(callback, ms, uniqueId) {
-				if (!uniqueId) {
-					uniqueId = "resize";
-				}
-				if (timers[uniqueId]) {
-					clearTimeout(timers[uniqueId]);
-				}
-				timers[uniqueId] = setTimeout(callback, ms);
-			};
-		})();
-
-
-		function updatePos() {
-			currentSection = $(window).scrollTop() / elementHeight;
-			currentSectionNum = Math.ceil(currentSection + 0.01);
-			sliderTop = $(window).scrollTop() / scale;
-			$('.nav-pointer').css('top', sliderTop).text(currentSectionNum + '/' + sectionAmount);
-		}
-
-		function sliderMove(e) {
-			$('body').scrollTop(parseInt(e) * scale);
-		}
-
-		$(window).scroll(function() {
-			if (!isDragging) {
-				updatePos();
-			}
-		});
-
-		$(window).resize(function() {
-			waitForFinalEvent(function() {
-				bodyHeight = $('body').height();
-				sliderHeight = $('.slider-navigation').height();
-				elementHeight = $('section').height();
-				sectionAmount = $('section').length;
-				scale = (bodyHeight - (elementHeight)) / (sliderHeight - $('.nav-pointer').outerHeight());
-
-				updatePos();
-			}, 500, "resizing");
-		});
-
-		$(".draggable").draggable({
-			axis: "y",
-			containment: "parent",
-			start: function() {
-				isDragging = true;
-				$('body').addClass('dragging');
-			},
-			drag: function() {
-				pointerPos = $(this).css('top');
-				sliderMove(pointerPos);
-				updatePos();
-			},
-			stop: function() {
-				isDragging = false;
-				$('body').removeClass('dragging');
-			}
-		});
+			$(document).ready(function(){styleDefault();});var isDragging=false;var sliderTop, pointerPos, currentSection;var bodyHeight=$('body').height();var sliderHeight=$('.slider-navigation').height();var elementHeight=$('section').height();var sectionAmount=$('section').length;var scale=(bodyHeight - (elementHeight)) / (sliderHeight - $('.nav-pointer').outerHeight());var waitForFinalEvent=(function(){var timers={};return function(callback, ms, uniqueId){if (!uniqueId){uniqueId="resize";}if (timers[uniqueId]){clearTimeout(timers[uniqueId]);}timers[uniqueId]=setTimeout(callback, ms);};})();function updatePos(){currentSection=$(window).scrollTop() / elementHeight;currentSectionNum=Math.ceil(currentSection + 0.01);sliderTop=$(window).scrollTop() / scale;$('.nav-pointer').css('top', sliderTop).text(currentSectionNum + '/' + sectionAmount);}function sliderMove(e){$('body').scrollTop(parseInt(e) * scale);}$(window).scroll(function(){if (!isDragging){updatePos();}});$(window).resize(function(){waitForFinalEvent(function(){bodyHeight=$('body').height();sliderHeight=$('.slider-navigation').height();elementHeight=$('section').height();sectionAmount=$('section').length;scale=(bodyHeight - (elementHeight)) / (sliderHeight - $('.nav-pointer').outerHeight());updatePos();}, 500, "resizing");});$(".draggable").draggable({axis: "y",containment: "parent",start: function(){isDragging=true;$('body').addClass('dragging');},drag: function(){pointerPos=$(this).css('top');sliderMove(pointerPos);updatePos();},stop: function(){isDragging=false;$('body').removeClass('dragging');}});
 		</script>
 </body>
 
