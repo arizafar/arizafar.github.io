@@ -154,7 +154,7 @@ body.dragging .nav-pointer {
 }
 
 .unselectable{
-  -webkit-user-select: none; /* Safari */        
+  -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
@@ -301,8 +301,8 @@ body.dragging .nav-pointer {
 /* ----------------------
   social-links color
 ------------------------*/
-  .fa-facebook {
-    color: #3b5998
+  .fa-envelope-open {
+    color: #1aa8cc
   }
 
   .fa-stack-overflow {
